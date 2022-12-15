@@ -1,0 +1,24 @@
+.image-div {
+    border-style: solid;
+    margin: 1vw;
+    border-radius: 5px;
+    border-width: 0.5px;
+    border-color: rgba(150, 150, 150, 0.5);
+    text-align: center;
+    height: 45vh;
+    width: 30vw;
+  }
+  .main-div {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-style: double;
+    border-radius: 10px;
+    border: 1px solid black;
+  }
+  
+  .title {
+    margin: 1vw;
+  }
+  
+  .main-block {
+  }

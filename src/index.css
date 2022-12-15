@@ -1,11 +1,9 @@
 /* CSS Custom Properties */
 :root {
-  --white: #FFFFFF;
+  --grey: #ffffff;
   --tan-1: #FBF9F6;
   --tan-2: #E7E2DD;
   --tan-3: #E2D9D1;
-  --tan-4: #D3C1AE;
-  --orange: #F67F00;
   --text-light: #968c84;
   --text-dark: #615954;
 }
@@ -21,7 +19,7 @@ body {
   sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--tan-4);
+  background-color: Navy;
   padding: 2vmin;
   height: 100vh;
 }
@@ -80,9 +78,15 @@ code {
 
 .form-container {
   padding: 3vmin;
-  background-color: var(--tan-1);
+  background-color: navy;
   border: .1vmin solid var(--tan-3);
   border-radius: 1vmin;
+  display:flex;
+  justify-content:center;
+  width:30%;
+}
+h1 {
+  color:white;
 }
 
 p.error-message {
@@ -120,7 +124,7 @@ input:focus {
 button, a.button {
   margin: 1vmin;
   padding: 1vmin;
-  color: var(--white);
+  color: var(--grey);
   background-color: var(--orange);
   font-size: 2vmin;
   font-weight: bold;
@@ -151,3 +155,4 @@ button[type="submit"] {
   grid-column: span 2;
   margin: 1vmin 0 0;
 }
+
