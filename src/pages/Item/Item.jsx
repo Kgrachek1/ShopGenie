@@ -1,4 +1,5 @@
-import '//Item.css'
+import './Item.css';
+
 
 export default function Item({ item }) {
     return (

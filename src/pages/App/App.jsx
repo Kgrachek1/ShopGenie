@@ -6,7 +6,7 @@ import AuthPage from '../AuthPage/AuthPage';
 import NewOrderPage from '../ShopPage/ShopPage';
 import OrderHistoryPage from '../PurchaseHistory/PurchaseHistory';
 import NavBar from '../../components/NavBar/NavBar';
-import SearchItem from '../../Item/Item';
+import Cart from '../Cart/Cart';
 
 
 
@@ -21,9 +21,9 @@ export default function App() {
           
             <Routes>
               {/* Route components in here */}
-              <Route path="/orders/new" element={<NewOrderPage />} />
-              <Route path="/orders" element={<OrderHistoryPage />} />
-          
+              <Route path="/shop/new" element={<NewOrderPage />} />
+              <Route path="/purchases" element={<OrderHistoryPage />} />
+              <Route path="/cart" element={<Cart />} />
             </Routes>
           </>
           :

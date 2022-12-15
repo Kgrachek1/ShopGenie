@@ -7,18 +7,22 @@
     text-align: center;
     height: 45vh;
     width: 30vw;
+    background-size: contain;
   }
   .main-div {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     border-style: double;
     border-radius: 10px;
-    border: 1px solid black;
+    border: 5px solid black;
   }
   
   .title {
     margin: 1vw;
+    display:flex;
+    justify-content: flex-end;
   }
   
   .main-block {
+    margin:1vw;
   }

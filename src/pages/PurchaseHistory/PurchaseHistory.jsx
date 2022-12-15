@@ -1,10 +1,9 @@
 
-
 export default function OrderHistoryPage() {
   
   return (
     <>
-      <h1>Past Purchases</h1>
+      <h3>Past Purchases</h3>
       
     </>
   );

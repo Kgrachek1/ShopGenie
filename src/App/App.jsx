@@ -1,33 +1,35 @@
 import './App.css';
+import { useState, useEffect} from 'react';
 import { Routes, Route } from 'react-router-dom';
-import {  user } from '../../utilities/users-service';
+import { getUser } from '../../utilities/users-service';
 import AuthPage from '../AuthPage/AuthPage.Jsx';
 import NewOrderPage from '../NewOrderPage/NewOrderPage';
 import OrderHistoryPage from '../OrderHistoryPage';
 import NavBar from '../../components/NavBar/NavBar';
-import Item from '../Item/Item';
-
+import Cart from './pages/Cart/Cart';
 
 
 export default function App() {
+  const [user, setUser] = useState(getUser());
+
   return (
     <main className="App">
       { user ? 
         <>
          <NavBar />
-         <SearchItem />
          <Routes>
          {/* Route Components in here*/}
-          <Route path="/orders/new" element ={<NewOrderPage/>} />
-          <Route path="/orders" element={<OrderHistoryPage />} />
+          <Route path="/shop/new" element ={<NewOrderPage />} />
+          <Route path="/purchases" element={<OrderHistoryPage />} />
+          <Route path="/cart" element={<Cart />} />
          </Routes>
         </>
         
         //<NewOrderPage />
-      :
+        :
         <AuthPage />
-      }
+    }
     </main>
-)
+);
   }
 
