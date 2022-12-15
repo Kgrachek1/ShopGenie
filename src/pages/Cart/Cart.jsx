@@ -1,34 +1,45 @@
 import React, { useState } from 'react';
 
-const Cart = () => {
+  
+const ShoppingCart = () => {
   const [items, setItems] = useState([]);
 
-  const addItem = (item) => {
-    setItems((prevState) => [...prevState, item]);
-  }
+  const addToCart = (item) => {
+    const existingItem = items.find(i => i.id === item.id);
+    if (existingItem) {
+      setItems(items.map(i => (i.id === item.id ? { ...i, quantity: i.quantity + 1 } : i)));
+    } else {
+      setItems([...items, { ...item, quantity: 1 }]);
+    }
+  };
 
-  const removeItem = (item) => {
-    setItems((prevState) => prevState.filter((i) => i !== item));
-  }
+  const removeFromCart = (itemId) => {
+    const existingItem = items.find(i => i.id === itemId);
+    if (existingItem) {
+      if (existingItem.quantity > 1) {
+        setItems(items.map(i => (i.id === itemId ? { ...i, quantity: i.quantity - 1 } : i)));
+      } else {
+        setItems(items.filter(i => i.id !== itemId));
+      }
+    }
+  };
+
+  const totalPrice = items.reduce((acc, item) => acc + (item.price * item.quantity), 0);
 
   return (
     <div>
-      <h1>Cart</h1>
-      <ul>
-        {items.map((item) => (
-          <li key={item.id}>
-            {item.name} - {item.price}
-          </li>
-        ))}
-      </ul>
-      <button onClick={() => addItem({ id: 1, name: 'item1', price: 10 })}>
-        Add Item
-      </button>
-      <button onClick={() => removeItem({ id: 1, name: 'item1', price: 10 })}>
-        Remove Item
-      </button>
+      <h2>Cart</h2>
+      {items.map(item => (
+        <div key={item.id}>
+          {item.name} - {item.quantity} x {item.price}
+          <button onClick={() => removeFromCart(item.id)}>Remove</button>
+        </div>
+      ))}
+      <div>Total: {totalPrice}</div>
     </div>
   );
-}
+};
 
-export default Cart;
+  
+
+export default ShoppingCart;

@@ -1,44 +1,18 @@
-import React, { useState } from 'react';
-import Item from '../Item/Item';
+import SearchBar from "../../components/Search/Search";
+import { useState } from 'react';
+import Item from '../../components/Item/Item';
 
-
-//
-
-
-export default function DataFetching() {
+export default function ShopPage() {
   const [data, setData] = useState([]);
-  const [search, setSearch] = useState('');
-
-  async function fetchDataHandler() {
-    let response = await fetch(`https://api.bluecartapi.com/request?api_key=42E114313B1D4FEB8F610152EA003066&search_term=${search}&type=search`
-      );
-    let resolved = await response.json();
-    setData(resolved.search_results);
-    console.log(resolved);
-  }
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    fetchDataHandler()
-  };
   return (
-    <>
-    <form onSubmit={handleSubmit}>
-        <input
-          type='text'
-          value={search}
-          onChange={(event) => setSearch(event.target.value)}
-        />
-        <button type='submit'>Search</button>
-      </form>
-      {/* <button onClick={fetchDataHandler}>get data</button> */}
+    <div>
+      <SearchBar setData={setData}/>
+      {data.map(item => (
+        <div key={item.id}>
+          <Item item={item}/>
+        </div>
       
-      <div>
-        {data.length === 0
-          ? 'loading'
-          : data.map((item) => <div> <Item item={item}/> </div>)}
-      </div>
-    </>
+      ))}
+    </div>
   );
-} 
-
-
+};

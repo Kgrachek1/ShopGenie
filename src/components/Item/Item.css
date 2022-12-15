@@ -14,15 +14,26 @@
     grid-template-columns: repeat(3, 1fr);
     border-style: double;
     border-radius: 10px;
-    border: 5px solid black;
+    border: 50px solid black;
   }
   
   .title {
     margin: 1vw;
     display:flex;
     justify-content: flex-end;
+    font-size: medium;
+    color:rgb(243, 243, 245);
   }
   
   .main-block {
     margin:1vw;
+  }
+  .art {
+    display:flex;
+    justify-content: space-between;
+    color:white;
+  }
+  .cartbtn {
+    background-color: black;
+    color:white;
   }
