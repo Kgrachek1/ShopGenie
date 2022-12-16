@@ -24,7 +24,7 @@ export default function Item({ item }) {
             &nbsp;
             &nbsp;
             &nbsp;
-            <button className='cartbtn' type="submit">Add to Cart</button>
+            <button className='cartbtn' type="submit" onClick={this.addToCart}>Add to Cart</button>
           </div>
         </div>
       </div>

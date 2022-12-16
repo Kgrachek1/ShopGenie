@@ -30,7 +30,7 @@ export default function SearchBar({setData}) {
           placeholder='Search...'
           value={search}
           onChange={(event) => setSearch(event.target.value)} />
-        <button type="submit"></button>
+        <button type='submit'>Search</button>
       </form>
     </div>
   );
