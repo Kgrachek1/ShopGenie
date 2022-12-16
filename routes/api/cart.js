@@ -1,11 +1,7 @@
-// Import the Express router
-const router = require('express').Router();
+// const express = require('express');
+// const router = express.Router();
+// const addCtrl = require('../../controllers/api/shop');
 
-// Define the route for the Cart page
-router.get('/cart', (req, res) => {
-  // Redirect the user to the Cart page
-  res.redirect('/cart');
-});
+// router.post('/search', addCtrl.addToCart);
 
-// Export the router
-module.exports = router;
+// module.exports = router;

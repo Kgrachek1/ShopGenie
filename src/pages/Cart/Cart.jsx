@@ -4,14 +4,6 @@ import React, { useState } from 'react';
 const ShoppingCart = () => {
   const [items, setItems] = useState([]);
 
-  const addToCart = (item) => {
-    const existingItem = items.find(i => i.id === item.id);
-    if (existingItem) {
-      setItems(items.map(i => (i.id === item.id ? { ...i, quantity: i.quantity + 1 } : i)));
-    } else {
-      setItems([...items, { ...item, quantity: 1 }]);
-    }
-  };
 
   const removeFromCart = (itemId) => {
     const existingItem = items.find(i => i.id === itemId);
