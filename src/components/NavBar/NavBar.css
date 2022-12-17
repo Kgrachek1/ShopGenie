@@ -1,4 +1,9 @@
 nav {
-    background-color: teal;
-    text-decoration:none
+    display:flex;
+    justify-content:space-between;
+    margin: 0auto;
+    background-color:rgb(246, 239, 29);
+    color:rgb(66, 75, 121);
+    text-decoration:none;
+    padding-right: 65px;
 }

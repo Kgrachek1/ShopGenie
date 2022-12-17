@@ -1,9 +1,9 @@
 /* CSS Custom Properties */
 :root {
   --grey: #070606;
-  --tan-1: #FBF9F6;
-  --tan-2: #E7E2DD;
-  --tan-3: #E2D9D1;
+  --tan-1: #e0b575;
+  --tan-2: #f4e627;
+  --tan-3: #d67520;
   --text-light: #968c84;
   --text-dark: #615954;
 }
@@ -19,7 +19,7 @@ body {
   sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgb(49, 49, 97);
+  background-color: #292e40;
   padding: 2vmin;
   height: 100vh;
 }
@@ -78,12 +78,12 @@ code {
 
 .form-container {
   padding: 3vmin;
-  background-color: rgb(0, 0, 0);
-  border: .1vmin solid var(--tan-3);
+  background-color: rgb(41, 46, 64);
+  border: .1vmin solid black;
   border-radius: 1vmin;
-  display:flex;
-  justify-content:center;
-  width:30%;
+  width:25vw;
+  height:37vh;
+  color:yellow;
 }
 h1 {
   color:white;
@@ -105,13 +105,14 @@ label {
   font-size: 2vmin;
   display: flex;
   align-items: center;
+  color:yellow;
 }
 
 
 button, a.button {
   margin: 1vmin;
   padding: 1vmin;
-  color: var(--grey);
+  color: rgb(245, 238, 238);
   background-color: var(--orange);
   font-size: 2vmin;
   font-weight: bold;
@@ -167,4 +168,7 @@ button[type="submit"] {
 
 .main-block {
   margin:1vw;
+}
+nav > a {
+  color:rgb(246, 42, 42);
 }

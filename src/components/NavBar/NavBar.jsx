@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import * as userService from '../../utilities/users-service';
 import './NavBar.css'
+
 export default function NavBar({ user, setUser }) {
   function handleLogOut() {
     userService.logOut();
@@ -8,15 +9,19 @@ export default function NavBar({ user, setUser }) {
   }
 
   return (
-    <nav>
+    <nav className='nav-wrapper'>
+      <img className='brand-logo-left' src="https://i.imgur.com/C7NuZ7r.png" alt="" />
+      
       <span> {user.name}</span>
-      &nbsp; | &nbsp;
+        | 
+              
       <Link to="/purchases">Past Purchases</Link>
-      &nbsp; | &nbsp;
+       | 
       <Link to="/shop/new">Shop</Link>     
-      &nbsp;| &nbsp;
+       |
       <Link to ="/cart">Cart</Link>
-      &nbsp;|&nbsp;<Link to="" onClick={handleLogOut}>Log Out</Link>
+       |<Link to="" onClick={handleLogOut}>Log Out</Link>
     </nav>
+    
   );
 }
