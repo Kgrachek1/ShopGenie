@@ -1,15 +1,24 @@
 const express = require('express');
 const cart = require('../../models/cart');
-const router = express.Router();
-const shopCtrl = require('../../controllers/api/shop')
+
+
 
 module.exports = {
     getCartItems,
     removeFromCart,
     updateCartItem,
-    handleaddToCart
+    handleaddToCart,
+    newCart
 }
 
+async function newCart(req, res) {
+    try {
+      const cart = await cart.getCart(req.user._id);
+      res.json(cart);
+    } catch (err) {
+        res.status(400).json(err);
+    }
+}
 
 async function handleaddToCart(req, res) {
     try {

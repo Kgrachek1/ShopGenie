@@ -2,7 +2,7 @@ import './Item.css';
 import React, { useState } from 'react';
 
 
-export default function Item({ item, handleAddToCart }) {
+export default function Item({ item }) {
   const [items, setItems] = useState([]);
 
   const handleAddToCart = async (item) => {
@@ -27,6 +27,7 @@ export default function Item({ item, handleAddToCart }) {
         <div className="item-price">${item.offers.primary.price}</div>
         <div className="item-add">
           <button onClick={() => handleAddToCart(item)}>Add to cart</button>
+      <hr/>
         </div>
       </div>
     </div>

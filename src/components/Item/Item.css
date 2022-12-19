@@ -1,24 +1,27 @@
-.image-div {
+
+.item-image {
+  display:inline-flex;
+  justify-content: center;
+  align-items: center;
     border-style: solid;
     margin: 1vw;
     border-radius: 5px;
     border-width: 0.5px;
     border-color: rgba(150, 150, 150, 0.5);
     text-align: center;
-    height: 25vh;
-    width: 41vw;
+    height: 26.5vh;
+    width: 14vw;
     background-size: contain;
     background-repeat: no-repeat !important;
     border-style: double;
-    border-radius: 10px;
-    border: 1px solid black
+    border-radius: 5px;
+    border: 1px solid rgb(243, 249, 143)
 }
-  .main-div {
-    display: grid;
+  .item-details{
+    display: flexbox;
     grid-template-columns: repeat(3, 1fr);
-    border-style: double;
-    border-radius: 10px;
-    border: 1px solid black;
+    color:white;
+    
   }
   
   .title {
