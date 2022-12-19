@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 
 export default function Cart() {
   const [items, setItems] = useState([]);
-  const removeFromCart = (itemId) => {
+  const removeFromCart =  (itemId) => {
     const existingItem = items.find(i => i.id === itemId);
     if (existingItem) {
       if (existingItem.quantity > 1) {

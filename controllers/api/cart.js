@@ -4,8 +4,6 @@ const router = express.Router();
 const shopCtrl = require('../../controllers/api/shop')
 
 module.exports = {
-  cart,
-  addToCart,
     getCartItems,
     removeFromCart,
     updateCartItem,
@@ -43,17 +41,6 @@ async function updateCartItem(req, res) {
     }
 }
 
-
-  
-  async function addToCart(req, res) {
-    try {  
-      const cart = await cart.getCart(req.user._id);
-      await cart.addItemToCart(req.params.id);
-      res.json(cart);
-    } catch (err) {
-      res.status(400).json(err);
-    }
-  }
 
     async function getCartItems(req, res) {
         try {

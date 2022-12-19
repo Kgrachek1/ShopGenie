@@ -7,7 +7,7 @@ import ShopPage from '../ShopPage/ShopPage';
 import PurchaseHistory from '../PurchaseHistory/PurchaseHistory';
 import NavBar from '../../components/NavBar/NavBar';
 import Cart from '../Cart/Cart';
-import Item from '../../components/Item/Item';
+
 
 
 export default function App() {
@@ -24,10 +24,7 @@ export default function App() {
               <Route path="/shop/new" element={<ShopPage />} />
               <Route path="/purchases" element={<PurchaseHistory />} />
               <Route path="/cart" element={<Cart />} />
-              <Route path="/" element={<ShopPage />} />
-              <Route path="/shop" element={<ShopPage />} />
-              <Route path="/cart/:id" element={<Item />} />
-
+              <Route path="/" element={<ShopPage />} />   
             </Routes>
           </>
           :

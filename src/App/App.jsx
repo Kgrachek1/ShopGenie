@@ -21,7 +21,7 @@ export default function App() {
          {/* Route Components in here*/}
           <Route path="/" element={<ShopPage />} />
           <Route path="/shop" element={<ShopPage />} />
-          <Route path="/cart/:id" element={<Item />} />
+          <Route path="/cart/:id" element={<Cart />} />
 
           <Route path="/shop/new" element ={<ShopPage />} />
           <Route path="/purchases" element={<PurchaseHistory />} />
