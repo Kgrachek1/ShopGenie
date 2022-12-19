@@ -5,8 +5,6 @@ import Item from '../../components/Item/Item';
 export default function ShopPage() {
   const [data, setData] = useState([]);
   
-  
-  
   return (
     <div>
       <SearchBar setData={setData}/>

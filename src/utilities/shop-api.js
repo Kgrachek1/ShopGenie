@@ -8,3 +8,7 @@ export  function shopSearch(search) {
   return sendRequest(`${BASE_URL}/search?q=${search}`)
 }
 
+ export function getCartItems(id) {
+   return sendRequest(`${BASE_URL}/cart/items/${id}`);
+}
+

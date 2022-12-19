@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 
-  
-const ShoppingCart = () => {
+
+export default function Cart() {
   const [items, setItems] = useState([]);
-
-
   const removeFromCart = (itemId) => {
     const existingItem = items.find(i => i.id === itemId);
     if (existingItem) {
@@ -15,9 +13,9 @@ const ShoppingCart = () => {
       }
     }
   };
-
   const totalPrice = items.reduce((acc, item) => acc + (item.price * item.quantity), 0);
 
+  
   return (
     <div>
       <h2>Cart</h2>
@@ -34,4 +32,3 @@ const ShoppingCart = () => {
 
   
 
-export default ShoppingCart;

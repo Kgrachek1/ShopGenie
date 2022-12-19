@@ -7,7 +7,7 @@ import ShopPage from '../ShopPage/ShopPage';
 import PurchaseHistory from '../PurchaseHistory';
 import NavBar from '../../components/NavBar/NavBar';
 import Cart from './pages/Cart/Cart';
-
+import Item from '../../components/Item/Item';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
@@ -19,9 +19,14 @@ export default function App() {
             <NavBar user={user} setUser={setUser} />
          <Routes>
          {/* Route Components in here*/}
+          <Route path="/" element={<ShopPage />} />
+          <Route path="/shop" element={<ShopPage />} />
+          <Route path="/cart/:id" element={<Item />} />
+
           <Route path="/shop/new" element ={<ShopPage />} />
           <Route path="/purchases" element={<PurchaseHistory />} />
           <Route path="/cart" element={<Cart />} />
+          
          </Routes>
         </>
         
