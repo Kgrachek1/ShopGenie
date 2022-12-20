@@ -1,32 +1,20 @@
 import './Item.css';
-import React, { useState } from 'react';
+import { useParams } from 'react-router-dom';
 
-
-export default function Item({ item }) {
-  const [items, setItems] = useState([]);
-
-  const handleAddToCart = async (item) => {
-    console.log(item);
-    const existingItem = items.find((i) => i.id === item.id);
-    if (existingItem) {
-      setItems(
-        items.map((i) => (i.id === item.id ? { ...i, quantity: i.quantity + 1 } : i))
-      );
-    } else {
-      setItems([...items, { ...item, quantity: 1 }]);
-    }
-  };
+export default function Item({data, handleAddToOrder, item}) {
+  // const { itemId } = useParams();
+  // let item = data.find((item) => item.product.item_id === itemId)
 
   return (
     <div className="item">
       <div className="item-image">
-        <img src={item.product.main_image} alt={item.product.title} />
+      <img src={item.product.main_image} alt={item.product.title} />
       </div>
       <div className="item-details">
         <div className="item-title">{item.product.title}</div>
         <div className="item-price">${item.offers.primary.price}</div>
         <div className="item-add">
-          <button onClick={() => handleAddToCart(item)}>Add to cart</button>
+          <button onClick={() => handleAddToOrder(item.product.item_id)}>Add to cart</button>
       <hr/>
         </div>
       </div>

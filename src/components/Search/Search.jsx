@@ -1,7 +1,9 @@
 import { useState } from "react";
-import * as shopApi from '../../utilities/shop-api'
+import * as itemsAPI from '../../utilities/item-api';
 import {useNavigate} from 'react-router-dom'
 import './Search.css'
+
+
 export default function SearchBar({setData}) {
 
   const [search, setSearch] = useState("");
@@ -9,9 +11,9 @@ export default function SearchBar({setData}) {
 
 
   async function fetchDataHandler() {
-    let searchResult = await shopApi.shopSearch(search)
+    let searchResult = await itemsAPI.searchItems(search)
     if (searchResult) {
-      navigate('/shop/new')
+      navigate('/shop')
     }
     setData(searchResult.search_results) 
     console.log(searchResult.search_results);

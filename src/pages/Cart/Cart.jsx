@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 
-export default function Cart() {
+export default function Cart(data, handleAddToCart) {
   const [items, setItems] = useState([]);
   const removeFromCart =  (itemId) => {
     const existingItem = items.find(i => i.id === itemId);
