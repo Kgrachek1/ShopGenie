@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 
 
-export default function Cart(data, handleAddToCart) {
+export default function Cart({ cart, lineItem }) {
   const [items, setItems] = useState([]);
+ 
   const removeFromCart =  (itemId) => {
     const existingItem = items.find(i => i.id === itemId);
     if (existingItem) {
@@ -13,16 +14,18 @@ export default function Cart(data, handleAddToCart) {
       }
     }
   };
+
   const totalPrice = items.reduce((acc, item) => acc + (item.price * item.quantity), 0);
 
   
   return (
     <div>
       <h2>Cart</h2>
-      {items.map(item => (
-        <div key={item.id}>
-          {item.name} - {item.quantity} x {item.price}
+      {lineItem.map(item => (
+        <div key={cart.item_id}>
+         {item.product.title} - {item.quantity} x {item.offers.primary.price}
           <button onClick={() => removeFromCart(item.id)}>Remove</button>
+          <div> {item.main_image} </div>
         </div>
       ))}
       <div>Total: {totalPrice}</div>

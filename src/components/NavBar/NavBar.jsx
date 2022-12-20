@@ -17,7 +17,7 @@ export default function NavBar({ user, setUser }) {
               
       <Link to="/purchases">Past Purchases</Link>
        | 
-      <Link to="/shop/new">Shop</Link>     
+      <Link to="/">Shop</Link>     
        |
       <Link to ="/cart">Cart&nbsp;🛒</Link>
        |<Link to="" onClick={handleLogOut}>Log Out</Link>

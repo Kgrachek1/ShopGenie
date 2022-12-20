@@ -1,9 +1,8 @@
 import './Item.css';
-import { useParams } from 'react-router-dom';
 
-export default function Item({data, handleAddToOrder, item}) {
-  // const { itemId } = useParams();
-  // let item = data.find((item) => item.product.item_id === itemId)
+
+export default function Item({data, handleAddToOrder, item }) {
+  
 
   return (
     <div className="item">

@@ -14,7 +14,7 @@ export default function App() {
   const [user, setUser] = useState(getUser());
   const [data, setData] = useState([]);
   const [cart, setCart] = useState(null);
-
+  const [lineItem, setLineItem] = useState(null);
 
   useEffect(function () {
     async function getCart() {
@@ -40,9 +40,9 @@ export default function App() {
             <Routes>
               {/* Route components in here */}
               <Route path="/shop" element={<ShopPage data={data} setData={setData}
-              handleAddToOrder={handleAddToOrder} />} />
+              handleAddToOrder={handleAddToOrder}  />} />
               <Route path="/purchases" element={<PurchaseHistory />} />
-              <Route path="/cart" element={<Cart cart={cart} />} />
+              <Route path="/cart" element={<Cart cart={cart} lineItem={lineItem} />} />
               <Route path="/" element={<ShopPage setData={setData} handleAddToOrder={handleAddToOrder} data={data}/>} />   
             </Routes>
           </>
