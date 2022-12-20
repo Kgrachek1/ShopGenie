@@ -10,3 +10,7 @@ export function addItemToCart(itemId) {
   console.log(itemId)
     return sendRequest(`${BASE_URL}/cart/items/${itemId}`, 'POST');
   }
+
+export function deleteItemFromCart(itemId) {
+  return sendRequest(`${BASE_URL}/cart/items/${itemId}`, 'DELETE');
+}

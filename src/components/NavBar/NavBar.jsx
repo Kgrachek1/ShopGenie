@@ -13,14 +13,14 @@ export default function NavBar({ user, setUser }) {
       <img className='brand-logo-left' src="https://i.imgur.com/C7NuZ7r.png" alt="" />
       
       <span> {user.name}</span>
-        | 
-              
-      <Link to="/purchases">Past Purchases</Link>
        | 
-      <Link to="/">Shop</Link>     
-       |
+      <Link to="/">Shop</Link>         
+       | 
       <Link to ="/cart">Cart&nbsp;🛒</Link>
-       |<Link to="" onClick={handleLogOut}>Log Out</Link>
+       |
+      <Link to="/purchases">Past Purchases</Link>
+       |
+       <Link to="" onClick={handleLogOut}>Log Out</Link>
     </nav>
     
   );

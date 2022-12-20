@@ -5,7 +5,8 @@ const  Order  = require('../../models/order');
 
 module.exports = {
     cart,
-    addToCart
+    addToCart,
+    removeFromCart
   }
   
   async function cart(req, res) {
@@ -29,3 +30,14 @@ module.exports = {
       res.status(400).json(err);
     }
   }
+
+  async function removeFromCart(req, res) {
+    try {
+      const cart = await Order.getCart(req.user._id);
+      await cart.removeItemFromCart(req.params.id);
+      res.json(cart);
+    } catch (err) {
+      res.status(400).json(err);
+    }
+  }
+  
