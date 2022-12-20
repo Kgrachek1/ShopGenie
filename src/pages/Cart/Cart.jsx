@@ -1,37 +1,22 @@
 import React, { useState } from 'react';
 
 
-export default function Cart({ cart, lineItem }) {
-  const [items, setItems] = useState([]);
+export default function Cart({ cart, setCart }) {
+
  
-  const removeFromCart =  (itemId) => {
-    const existingItem = items.find(i => i.id === itemId);
-    if (existingItem) {
-      if (existingItem.quantity > 1) {
-        setItems(items.map(i => (i.id === itemId ? { ...i, quantity: i.quantity - 1 } : i)));
-      } else {
-        setItems(items.filter(i => i.id !== itemId));
-      }
-    }
-  };
-
-  const totalPrice = items.reduce((acc, item) => acc + (item.price * item.quantity), 0);
-
   
-  return (
+  
+  return ( 
     <div>
-      <h2>Cart</h2>
-      {lineItem.map(item => (
-        <div key={cart.item_id}>
-         {item.product.title} - {item.quantity} x {item.offers.primary.price}
-          <button onClick={() => removeFromCart(item.id)}>Remove</button>
-          <div> {item.main_image} </div>
+       {cart.lineItems && cart.lineItems.length === 0 ?
+       'Your cart is empty' : 
+       cart.lineItems && cart.lineItems.map((item) => (
+        <div>
+         {item.item.title}
+         <img src={item.item.main_image} alt="" />
+         <button>Remove</button>
         </div>
-      ))}
-      <div>Total: {totalPrice}</div>
-    </div>
-  );
-};
-
-  
-
+         
+       ))}
+       </div>
+  )}   
