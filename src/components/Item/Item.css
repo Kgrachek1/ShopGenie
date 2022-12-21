@@ -5,11 +5,11 @@
   align-items: center;
     border-style: solid;
     margin: 1vw;
-    border-radius: 5px;
+    border-radius: 6px;
     border-width: 0.5px;
     border-color: rgba(150, 150, 150, 0.5);
     text-align: center;
-    height: 26.5vh;
+    height: 26.4vh;
     width: 14vw;
     background-size: contain;
     background-repeat: no-repeat !important;
