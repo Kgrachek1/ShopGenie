@@ -8,9 +8,7 @@ module.exports = {
 
 async function shopApi(req, res) {
     try {
-        let response = await fetch(`https://api.bluecartapi.com/request?api_key=${API_KEY}&search_term=${
-            req.query.q
-        }&type=search`)
+        let response = await fetch(`https://api.bluecartapi.com/request?api_key=${API_KEY}&search_term=${req.query.q}&type=search`)
         let items = await response.json()
         for (item of items.search_results) {
             const exists = await Item.exists({item_id: item.product.item_id})
@@ -25,7 +23,6 @@ async function shopApi(req, res) {
                     ratings_total: item.product.ratings_total
                 })
             }
-            // console.log(item);
         }res.json(items)
     } catch (err) {
         res.status(400).json(err)
