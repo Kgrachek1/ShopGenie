@@ -1,3 +1,22 @@
-body {  
-    
+
+.cart-div {  
+   display:flex;
+   justify-content: space-between;
+   border: double;
+   border-color: yellow;
+   color:white;
+   font-size: medium;
+   align-items: center;
+}
+
+.cart-div > .img {
+    display:flex;
+    justify-content: left;
+    align-items: left;
+}
+
+.total {
+  color:greenyellow;
+  padding-top: 35px;
+  padding-bottom:35px;
 }

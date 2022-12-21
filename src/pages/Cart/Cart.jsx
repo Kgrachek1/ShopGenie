@@ -1,5 +1,5 @@
 import * as ordersAPI from '../../utilities/orders-api';
-
+import './Cart.css';
 export default function Cart({ cart, setCart, lineItems }) {
  
   const handleDeleteItem = async (item_id) => {
@@ -37,17 +37,19 @@ export default function Cart({ cart, setCart, lineItems }) {
       ) : (
         cart.lineItems &&
         cart.lineItems.map((item) => (
-          <div>
+          <div className='cart-div'>
+            
+            <img className='img' src={item.item.main_image} alt="" /> 
             {item.item.title} 
-            &nbsp;
-            <img src={item.item.main_image} alt="" /> 
-            &nbsp;
+           
             {item.item.price}
-            <button onClick={() => handleDeleteItem(lineItems.item._id)}>Remove</button>
-          </div>
+            <button className='rbtn' onClick={() => handleDeleteItem(lineItems.item._id)}>Remove</button>
+           </div>
+          
         ))
       )}
-      <div>Total:{totalCost}</div>
+      <div className='total'><h4>Subtotal&nbsp;${totalCost}</h4>
+      <button>Checkout</button></div>
     </div>
   );
 }
