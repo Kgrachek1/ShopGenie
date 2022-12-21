@@ -12,5 +12,10 @@ export function addItemToCart(itemId) {
   }
 
 export function deleteItemFromCart(itemId) {
-  return sendRequest(`${BASE_URL}/cart/items/${itemId}`, 'DELETE');
+  return sendRequest(`${BASE_URL}/delete/${itemId}`, 'DELETE');
+}
+
+export function checkout() {
+  // Changing data on the server, so make it a POST request
+  return sendRequest(`${BASE_URL}/cart/checkout`, 'POST');
 }

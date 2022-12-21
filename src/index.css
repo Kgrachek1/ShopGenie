@@ -171,4 +171,22 @@ button[type="submit"] {
 }
 nav > a {
   color:rgb(246, 42, 42);
+  display:flex;
+  justify-content:space-between;
+  margin: 0auto;
+  background-color:none;
+  color:rgb(66, 75, 121);
+  text-decoration:none;
+  padding-right: 65px;
+}
+
+nav {
+  color: rgb(230, 114, 114) !important;
+  font-weight: 400;
+  display:flex;
+  justify-content:space-between;
+  margin: 0auto;
+  background-color:rgb(246, 239, 29);
+  text-decoration:none;
+  padding-right: 65px;
 }

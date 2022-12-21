@@ -5,6 +5,7 @@ const ordersCtrl = require('../../controllers/api/orders');
 
 router.get('/cart', ordersCtrl.cart);
 router.post('/cart/items/:id', ordersCtrl.addToCart);
-router.delete('/cart/items/:id', ordersCtrl.removeFromCart);
+router.delete('/delete/:id', ordersCtrl.removeFromCart);
+router.post('/cart/checkout', ordersCtrl.checkout);
 
 module.exports = router;

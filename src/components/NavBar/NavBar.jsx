@@ -11,16 +11,19 @@ export default function NavBar({ user, setUser }) {
   return (
     <nav className='nav-wrapper'>
       <img className='brand-logo-left' src="https://i.imgur.com/C7NuZ7r.png" alt="" />
-      
-      <span> {user.name}</span>
-       | 
-      <Link to="/">Shop</Link>         
-       | 
+      &nbsp;
+      &nbsp;
+       
+       &nbsp;
+      <Link to="/shop">Shop</Link>         
+        
+       &nbsp;
       <Link to ="/cart">Cart&nbsp;🛒</Link>
-       |
+       
       <Link to="/purchases">Past Purchases</Link>
-       |
+       
        <Link to="" onClick={handleLogOut}>Log Out</Link>
+      <span> Hello,&nbsp;{user.name}</span>
     </nav>
     
   );

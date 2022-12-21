@@ -39,11 +39,10 @@ export default function App() {
             
             <Routes>
               {/* Route components in here */}
-              <Route path="/shop" element={<ShopPage data={data} setData={setData}
-              handleAddToOrder={handleAddToOrder}  />} />
+              
               <Route path="/purchases" element={<PurchaseHistory />} />
               <Route path="/cart" element={<Cart cart={cart} setCart={setCart} />} />
-              <Route path="/" element={<ShopPage setData={setData} handleAddToOrder={handleAddToOrder} data={data}/>} />   
+              <Route path="/shop" element={<ShopPage setData={setData} handleAddToOrder={handleAddToOrder} data={data}/>} />   
             </Routes>
           </>
           :
