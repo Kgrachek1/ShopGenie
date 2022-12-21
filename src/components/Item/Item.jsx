@@ -1,9 +1,6 @@
 import './Item.css';
 
-
 export default function Item({data, handleAddToOrder, item }) {
-  
-
   return (
     <div className="item">
       <div className="item-image">

@@ -28,9 +28,7 @@ export function getToken() {
   const token = localStorage.getItem('token');
   if (!token) return null;
   const payload = JSON.parse(atob(token.split('.')[1]));
-  // A JWT's exp is expressed in seconds, not miliseconds
   if (payload.exp * 1000 < Date.now()) {
-    // Token has expired
     localStorage.removeItem('token');
     return null;
   }
@@ -43,7 +41,6 @@ export function getUser() {
 }
 
 export function checkToken() {
-  // We can't forget how to use .then with promises
   return usersAPI.checkToken()
     .then(dateStr => new Date(dateStr));
 }

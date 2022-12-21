@@ -1,15 +1,12 @@
 const  Order  = require('../../models/order');
 
-
-
-
 module.exports = {
     cart,
     addToCart,
     removeFromCart,
-    checkout
+    checkout,
+    getAllForUser
   }
-  
   async function cart(req, res) {
     try {
       const cart = await Order.getCart(req.user._id);
@@ -18,7 +15,6 @@ module.exports = {
       res.status(400).json(err);
     }
   }
-  
   async function addToCart(req, res) {
     try {
       const cart = await Order.getCart(req.user._id);
@@ -28,7 +24,6 @@ module.exports = {
       res.status(400).json(err);
     }
   }
-
   async function removeFromCart(req, res) {
     try {
       req.body.user = req.user._id;
@@ -42,7 +37,6 @@ module.exports = {
     }
   }
   
-  // Update the cart's isPaid property to true
 async function checkout(req, res) {
   const cart = await Order.getCart(req.user._id);
   cart.isPaid = true;
@@ -50,6 +44,11 @@ async function checkout(req, res) {
   console.log(cart)
   res.json(cart);
 }
+async function getAllForUser(req, res) {
+  const orders = await Order.find({user: req.user._id, isPaid: true}).sort('-updatedAt');
+  res.json(orders);
+}
+
   
   
   

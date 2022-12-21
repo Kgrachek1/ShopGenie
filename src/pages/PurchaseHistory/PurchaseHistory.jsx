@@ -1,4 +1,4 @@
-import Cart from "../Cart/Cart";
+import './PurchaseHistory.css'
 import { useState } from "react";
 import { useEffect } from "react";
 import * as ordersAPI from "../../utilities/orders-api";
@@ -10,9 +10,10 @@ export default function OrderHistoryPage({ user, setUser }) {
 
 useEffect(function() {
   async function getOrders() {
-    const orders = await ordersAPI.checkout();
+    const orders = await ordersAPI.getAllForUser();
     setActiveOrder(orders[0] || null);
     setOrders(orders);
+    console.log(orders)
   }
   getOrders();
 }, []);
@@ -21,7 +22,7 @@ return (
   <main className="OrderHistoryPage">
     <h1>Order History</h1>
     {/* Render a Cart component (needs to be coded) */}
-    <OrderHistory />
+    <OrderHistory orders={orders} setOrders={setOrders} activeOrder={activeOrder} setActiveOrder={setActiveOrder}/>
   </main>
 );
 }

@@ -23,6 +23,7 @@ export default function NavBar({ user, setUser }) {
       <Link to="/purchases">Past Purchases</Link>
        
        <Link to="" onClick={handleLogOut}>Log Out</Link>
+       
       <span> Hello,&nbsp;{user.name}</span>
     </nav>
     
