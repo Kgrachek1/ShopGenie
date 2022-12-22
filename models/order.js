@@ -11,7 +11,6 @@ const lineItemSchema = new Schema({
 })
 
 lineItemSchema.virtual('extPrice').get(function() {
-  // 'this' keyword is bound to the lineItem document
   return this.qty * this.item.price;
 });
 
@@ -63,7 +62,6 @@ orderSchema.methods.addItemToCart = async function (itemId) {
   return cart.save();
 };
 
-// Instance method to set an item's qty in the cart
 orderSchema.methods.setItemQty = function (itemId, newQty) {
   const cart = this;
   const lineItem = cart.lineItems.find(lineItem => lineItem.item.item_id ===itemId);
