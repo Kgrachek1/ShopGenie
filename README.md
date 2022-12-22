@@ -1,7 +1,7 @@
 <h1>Welcome to ShopGenie</h1>
 <h4>Getting Started</h4>
 
-ShopGenie utilizes the Walmart API to return product data from user search queries,to get started click this [ShopGenie](https://shopgenie.herokuapp.com/) link and proceed and sign-up up for an account.
+ShopGenie utilizes the Walmart API to return product data from user search queries,to get started click this [ShopGenie](https://shopgenie.herokuapp.com/) link and proceed to sign-up for an account.
 
 <p>Once you are Authenticated click the Shop link in your nav bar and search for an item, once you find some items add them to your cart and check-out.</p>
 <p>If you would like an order number total price and number of items click the Past Purchases in your navbar to view this information</p>
