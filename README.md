@@ -6,6 +6,8 @@ ShopGenie utilizes the Walmart API to return product data from user search queri
 <p>Once you are Authenticated click the Shop link in your nav bar and search for an item, once you find some items add them to your cart and check-out.</p>
 <p>If you would like an order number total price and number of items click the Past Purchases in your navbar to view this information</p>
 
+[Trello](https://trello.com/b/nIt47RVn/shopgenie)
+
 # Screenshots
 <img src="https://i.imgur.com/r5J8AML.png">
 <img src="https://i.imgur.com/XdvGTIG.png">
@@ -32,35 +34,3 @@ ShopGenie utilizes the Walmart API to return product data from user search queri
 </ol>
 
 
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
